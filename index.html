@@ -1,0 +1,58 @@
+# Site
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Check Account Status</title>
+<style>
+body{
+    font-family:Arial;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+input,button{
+    padding:10px;
+    margin:10px;
+}
+.box{
+    background:#222;
+    padding:20px;
+    border-radius:10px;
+    max-width:400px;
+    margin:auto;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Account Checker</h2>
+    <input type="text" id="uid" placeholder="Nhập UID">
+    <br>
+    <button onclick="check()">Kiểm Tra</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function check(){
+    const uid = document.getElementById("uid").value;
+    
+    if(!uid){
+        document.getElementById("result").innerHTML =
+        "Vui lòng nhập UID";
+        return;
+    }
+
+    const status = Math.random() > 0.5 ?
+        "Hoạt động bình thường" :
+        "Tạm khóa 7 ngày";
+
+    document.getElementById("result").innerHTML =
+        "UID: " + uid + "<br>Trạng thái: " + status;
+}
+</script>
+
+</body>
+  </html>
